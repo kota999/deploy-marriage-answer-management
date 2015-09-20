@@ -10,7 +10,7 @@
 
 3. ユーザ名の編集(setup.ymlファイルの編集)
 
-    sed -i -e "s/vagrant/*user*/g" setup.yml
+    sed -i -e "s/vagrant/*user*/g" setup.yml<br>
     sed -i -e "s/vagrant/*user*/g" vars/vars.yml
 
 4. deployの実行
