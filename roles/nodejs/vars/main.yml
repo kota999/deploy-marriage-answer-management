@@ -1,0 +1,6 @@
+nodejs:
+ - nodejs
+ - npm
+
+nodejs_module:
+ - forever

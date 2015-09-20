@@ -1,0 +1,30 @@
+yum_repos:
+  # rpmforge-repo
+  - "http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm"
+  # remi-repo
+  - "http://rpms.famillecollet.com/enterprise/remi-release-6.rpm"
+  # epel-repo
+  - "http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm"
+
+dev_tools:
+  - gcc
+  - gcc-c++
+  - gcc-gfortran
+  - make
+  - patch
+  - kernel-devel
+
+vim_pkgs:
+ - vim
+ - python
+ - python-devel
+ - python-setuptools
+ - ncurses-devel
+ - perl-ExtUtils-Embed
+ - mercurial
+ - lua
+ - lua-devel
+
+open_ports:
+ - 3000/tcp
+ - 3005/tcp

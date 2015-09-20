@@ -1,0 +1,11 @@
+---
+- name: Install nodejs npm
+  yum: name={{ item }} state=installed
+  sudo: yes
+  with_items: nodejs
+
+- name: Install nodejs module
+  npm: name={{ item }} global=yes
+  sudo: yes
+  with_items: nodejs_module
+

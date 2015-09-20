@@ -1,0 +1,15 @@
+rbenv_pkg:
+  - openssl-devel
+  - libyaml-devel
+  - libffi-devel
+  - readline-devel
+  - zlib-devel
+  - gdbm-devel
+  - ncurses-devel
+
+rbenv_url: "git://github.com/sstephenson/rbenv.git"
+rbenv_dir: "{{ home }}/.rbenv"
+
+ruby_build_url: "git://github.com/sstephenson/ruby-build.git"
+ruby_build_dir: "{{ home }}/.rbenv/plugins/ruby-build"
+

@@ -1,0 +1,8 @@
+- name: Reload firewalld
+  service: name=firewalld state=restarted enabled=yes
+  sudo: yes
+  notify: Wait for the server to come up
+
+- name: Wait for the server to come up
+  local_action: wait_for host={{ inventory_hostname }} port=22 delay=10
+

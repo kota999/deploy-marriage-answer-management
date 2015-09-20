@@ -1,0 +1,47 @@
+---
+- name: Yum update
+  yum:
+    name: "*"
+    state: "latest"
+  sudo: yes
+
+- name: Add yum repositories
+  yum: name={{ item }} state=present
+  sudo: yes
+  with_items: yum_repos
+
+- name: Install python-selinux
+  yum: name=libselinux-python state=latest
+  sudo: yes
+
+- name: Disable selinux
+  selinux: state=disabled
+  sudo: yes
+
+- name: Install git
+  yum: name=git state=installed
+  sudo: yes
+
+- name: Install basic develop tools
+  yum: name={{ item }} state=installed
+  sudo: yes
+  with_items: dev_tools
+
+- name: Start firewalld
+  service: name=firewalld state=started enabled=yes
+  sudo: yes
+  notify: Wait for the server to come up
+
+- name: Check if firewalld is running
+  command: systemctl is-active firewalld
+  register: firewalld_result
+  changed_when: False
+  ignore_errors: True
+  sudo: yes
+
+- name: Set the port state
+  firewalld: permanent=True port={{ item }} state=enabled
+  with_items: open_ports
+  when: firewalld_result.stdout == "active"
+  sudo: yes
+  notify: Reload firewalld

@@ -1,0 +1,10 @@
+---
+- hosts: web
+  user: vagrant
+  vars_files:
+    - vars/vars.yml
+  roles:
+    - common
+    #- nodejs
+    #- rails/rbenv
+    #- rails/ruby

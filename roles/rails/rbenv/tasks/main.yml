@@ -1,0 +1,24 @@
+- name: Install rbenv and ruby-build requirements
+  yum: name={{ item }} state=installed
+  sudo: yes
+  with_items: rbenv_pkg
+
+- name: Install rbenv
+  git: repo={{ rbenv_url }} dest={{ rbenv_dir }} version={{ branch }} accept_hostkey=yes
+
+- name: Ensure fragments bash dir exist
+  file: dest={{ home }}/.bash.d/ state=directory
+
+- name: Install rbenv bash file
+  copy: src=rbenv.bash dest={{ home }}/.bash.d/rbenv.bash mode=700 owner={{ account }}
+
+- name: Source rbenv bash file in dot bashrc
+  lineinfile: dest={{ home }}/.bash_profile regexp="rbenv" insertafter=EOF line="source ~/.bash.d/rbenv.bash" create=yes
+
+- name: Creates plugin directory
+  file: path={{ ruby_build_dir }} owner={{ account }} mode=0755 state=directory
+
+- name: Install ruby-build plugin
+  git: repo={{ ruby_build_url }} dest={{ ruby_build_dir }} version={{ branch }} accept_hostkey=yes
+
+
