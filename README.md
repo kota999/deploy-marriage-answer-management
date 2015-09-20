@@ -4,13 +4,14 @@
 
     ssh-copy-id -i ~/.ssh/id_rsa.pub <user>@<your-ipaddress>
 
-2. inventoryファイルの編集
+2. IPアドレスの編集(inventoryファイルの編集)
 
     sed -i -e "s/192.168.33.33/<your-ipaddress>" hosts
 
-3. setup.ymlファイルの編集
+3. ユーザ名の編集(setup.ymlファイルの編集)
 
     sed -i -e "s/vagrant/<user>" setup.yml
+    sed -i -e "s/vagrant/<user>" vars/vars.yml
 
 4. deployの実行
 
