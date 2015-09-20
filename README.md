@@ -1,0 +1,18 @@
+# 使い方
+
+1. no-password loginの有効化
+
+    ssh-copy-id -i ~/.ssh/id_rsa.pub <user>@<your-ipaddress>
+
+2. inventoryファイルの編集
+
+    sed -i -e "s/192.168.33.33/<your-ipaddress>" hosts
+
+3. setup.ymlファイルの編集
+
+    sed -i -e "s/vagrant/<user>" setup.yml
+
+4. deployの実行
+
+    ansible-playbook -i hosts setup.yml
+
