@@ -1,4 +1,4 @@
-account: "{{ user }}"
+account: "vagrant"
 home: "/home/{{ account }}"
 branch: "master"
 ruby_version: "2.1.2"

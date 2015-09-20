@@ -5,6 +5,8 @@
     - vars/vars.yml
   roles:
     - common
-    #- nodejs
-    #- rails/rbenv
-    #- rails/ruby
+    - nodejs
+    - rails/rbenv
+    - rails/ruby
+    - deploy/marriage
+    - deploy/rails

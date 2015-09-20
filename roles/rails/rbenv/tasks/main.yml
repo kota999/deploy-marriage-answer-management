@@ -1,3 +1,4 @@
+---
 - name: Install rbenv and ruby-build requirements
   yum: name={{ item }} state=installed
   sudo: yes

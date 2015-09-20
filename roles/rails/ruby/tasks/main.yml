@@ -1,9 +1,10 @@
+---
 - name: Install ruby
   shell: >-
     source {{ home }}/.bash_profile ;
     VERSION=`rbenv versions | grep {{ item }}` ;
     if [ "${VERSION}" = "" ] ; then
-      rbenv install {{ item }} &&
+      rbenv install {{ item }} ;
     fi
     executable=/bin/bash
   with_items: ruby_versions
@@ -12,7 +13,7 @@
   shell: >-
     source {{ home }}/.bash_profile ;
     VERSION=`rbenv versions | grep {{ ruby_version }}` ;
-    if [ "${VERSION}" = "" ] ; then
+    if ! [ "${VERSION}" = "" ] ; then
       rbenv global {{ ruby_version }} &&
       rbenv rehash ;
     fi

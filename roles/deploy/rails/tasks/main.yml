@@ -1,0 +1,22 @@
+---
+- name: Install rail dependency packages
+  yum: name={{ item }} state=present
+  with_items: rails_pkgs
+  sudo: yes
+
+- name: Install bundler
+  gem: name=bundler executable={{ home }}/.rbenv/shims/gem user_install=False state=latest
+
+- name: Install rails
+  shell: >-
+    source {{ home }}/.bash_profile ;
+    if [ -e {{ marriage_dir }} ] ; then
+      cd {{ marriage_dir }} &&
+      bundle update &&
+      bundle exec rake assets:precompile &&
+      export SECRET_KEY_BASE=$(bundle exec rake secret) &&
+      bundle exec rails server -e production -d ;
+    fi
+    executable=/bin/bash
+
+

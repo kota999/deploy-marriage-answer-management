@@ -1,0 +1,2 @@
+marriage_url: "https://github.com/n-someya/marriage-answer-management"
+marriage_dir: "{{ home }}/marriage-answer-management"
