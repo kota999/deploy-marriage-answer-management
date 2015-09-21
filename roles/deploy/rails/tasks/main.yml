@@ -12,11 +12,19 @@
     source {{ home }}/.bash_profile ;
     if [ -e {{ marriage_dir }} ] ; then
       cd {{ marriage_dir }} &&
-      bundle update &&
+      bundle update ;
+    fi
+    executable=/bin/bash
+
+- name: Start rails server
+  shell: >-
+    source {{ home }}/.bash_profile ;
+    INSTALL=`which rails` ;
+    if [ -e {{ marriage_dir }} ] && [ "${INSTALL}" != "" ] ; then
+      cd {{ marriage_dir }} &&
       bundle exec rake assets:precompile &&
       export SECRET_KEY_BASE=$(bundle exec rake secret) &&
       bundle exec rails server -e production -d ;
     fi
     executable=/bin/bash
-
 
