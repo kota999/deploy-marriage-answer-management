@@ -1,10 +1,18 @@
-yum_repos:
+yum_repos6:
   # rpmforge-repo
   - "http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm"
   # remi-repo
   - "http://rpms.famillecollet.com/enterprise/remi-release-6.rpm"
   # epel-repo
   - "http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm"
+
+yum_repos7:
+  # rpmforge-repo
+  - "http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm"
+  # remi-repo
+  - "http://rpms.famillecollet.com/enterprise/remi-release-7.rpm"
+  # epel-repo
+  - "http://ftp.iij.ad.jp/pub/linux/fedora/epel/7/x86_64/e/epel-release-7-5.noarch.rpm"
 
 dev_tools:
   - gcc
