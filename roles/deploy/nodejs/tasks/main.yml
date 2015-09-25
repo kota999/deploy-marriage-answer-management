@@ -1,0 +1,12 @@
+---
+- name: Install aaa package
+  copy: src=aaa dest={{ deploy_dir }}
+
+- name: Install aaa application
+  shell: >-
+    if [ -e {{ deploy_dir }}/aaa ] ; then
+      cd {{ deploy_dir }}/aaa &&
+      echo "npm install" > test.txt ;
+    fi
+    executable=/bin/bash
+

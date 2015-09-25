@@ -1,4 +1,4 @@
 ---
 - name: Install marriage-answer-management
-  git: repo={{ marriage_url }} dest={{ marriage_dir }} version={{ branch }} accept_hostkey=yes
+  git: repo={{ marriage_url }} dest={{ deploy_dir }} version={{ branch }} accept_hostkey=yes
 

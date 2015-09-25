@@ -2,4 +2,4 @@ rails_pkgs:
   - postgresql
   - postgresql-devel
 
-marriage_dir: "{{ home }}/marriage-answer-management"
+deploy_dir: "{{ home }}/marriage-answer-management"

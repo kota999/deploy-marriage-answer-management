@@ -10,3 +10,4 @@
     - rails/ruby
     - deploy/marriage
     - deploy/rails
+    - deploy/nodejs

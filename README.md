@@ -2,16 +2,16 @@
 
 ### 1. no-password loginの有効化
 
-    ssh-copy-id -i ~/.ssh/id_rsa.pub *user*@*your-ipaddress*
+    ssh-copy-id -i ~/.ssh/id_rsa.pub <user>@<your-ipaddress>
 
 ### 2. IPアドレスの編集(inventoryファイルの編集)
 
-    sed -i -e "s/192.168.33.33/*your-ipaddress*/g" hosts
+    sed -i -e "s/192.168.33.33/<your-ipaddress>/g" hosts
 
 ### 3. ユーザ名の編集(setup.ymlファイルの編集)
 
-    sed -i -e "s/vagrant/*user*/g" setup.yml
-    sed -i -e "s/vagrant/*user*/g" vars/vars.yml
+    sed -i -e "s/vagrant/<user>/g" setup.yml
+    sed -i -e "s/vagrant/<user>/g" vars/vars.yml
 
 ### 4. deployの実行
 
