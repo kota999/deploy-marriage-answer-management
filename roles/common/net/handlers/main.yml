@@ -6,3 +6,8 @@
 - name: Wait for the server to come up
   local_action: wait_for host={{ inventory_hostname }} port=22 delay=10
 
+- name: restart firewall
+  command: service iptables save
+  sudo: yes
+  command: service firewall restart
+  sudo: yes
