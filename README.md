@@ -20,4 +20,6 @@
 ### Tips
 
  - 事前にdeploy server の情報を見たい
-        ansible -i hosts <your-ipaddress> -m setup
+
+
+    ansible -i hosts <your-ipaddress> -m setup
