@@ -1,0 +1,9 @@
+---
+- name: Install python-selinux
+  yum: name=libselinux-python state=latest
+  sudo: yes
+
+- name: Disable selinux
+  selinux: state=disabled
+  sudo: yes
+

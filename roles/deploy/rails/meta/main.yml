@@ -1,5 +1,4 @@
 ---
 dependencies:
-  - { role: common }
   - { role: rails/ruby }
   - { role: deploy/marriage }

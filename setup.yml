@@ -4,7 +4,9 @@
   vars_files:
     - vars/vars.yml
   roles:
-    - common
+    - common/tools
+    - common/selinux
+    - common/net
     - nodejs
     - rails/rbenv
     - rails/ruby
