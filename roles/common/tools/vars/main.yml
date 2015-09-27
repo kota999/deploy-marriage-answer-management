@@ -22,7 +22,7 @@ dev_tools:
   - patch
   - kernel-devel
   - curl
-  - curl-devel
+  - libcurl-devel
 
 vim_pkgs:
  - vim
