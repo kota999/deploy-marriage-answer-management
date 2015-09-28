@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-user = 'vagrant'
+user = ENV['LOGIN_USER']
 
 gem_pkgs = Array['bundler', 'rails', 'pg', 'sass-rails', 'uglifier', 'coffee-rails', \
   'jquery-rails', 'turbolinks', 'jbuilder', 'sdoc', 'spring', 'foreman', 'puma', 'devise', \

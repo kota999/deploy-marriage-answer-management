@@ -29,6 +29,3 @@ describe port(3005) do
   it { should be_listening }
 end
 
-describe selinux do
-  it { should be_disabled }
-end

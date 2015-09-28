@@ -1,5 +1,5 @@
 ---
-- name: Install rail dependency packages
+- name: Install rails dependency packages
   yum: name={{ item }} state=present
   with_items: rails_pkgs
   sudo: yes

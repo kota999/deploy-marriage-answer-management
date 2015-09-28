@@ -1,10 +1,9 @@
 require 'spec_helper'
 
-repos = Array['rpmforge', 'remi', 'epel']
-
-for repo in repos
-  describe yumrepo(repos), :if => os[:family] == 'redhat' do
-    it { should exist }
+nodejs_require_pkgs = Array['nodejs', 'npm']
+for pkg in nodejs_require_pkgs do
+  describe package(pkg), :if => os[:family] == 'redhat' do
+    it { should be_installed }
   end
 end
 
