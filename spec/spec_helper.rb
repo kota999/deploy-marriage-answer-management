@@ -17,7 +17,7 @@ end
 
 host = ENV['TARGET_HOST']
 
-hosts_file = 'spec/hosts.yml'
+hosts_file = 'spec/site.yml'
 hosts_info = YAML.load_file(hosts_file)
 main_role = hosts_info.select { |k, v| v[:hosts].include?(host) if v[:hosts] }.keys.first
 

@@ -5,7 +5,7 @@ require 'rspec/core/rake_task'
 task :spec    => 'spec:all'
 task :default => :spec
 
-hosts_file = 'spec/hosts.yml'
+hosts_file = 'spec/site.yml'
 hosts_info = YAML.load_file(hosts_file)
 
 namespace :spec do
