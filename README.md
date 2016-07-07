@@ -50,8 +50,8 @@ master_roles, hosts, roles の構成にテストを分けて、ansibleのフォ�
  - ~~spec/marriage 以下のファイル内の***"user = 'vagrant'"***を修正~~
  - ~~spec/marriage ディレクトリの**"ディレクトリ名"**をデプロイ環境の**"ホスト名"**に変更~~<br>
     ~~(defaultは**"marriage"**)~~
- - spec/hosts.yml 内の":user: ***vagrant***"を修正
- - spec/hosts.yml 内の":hosts:"のhost名を修正
+ - spec/site.yml 内の":user: ***vagrant***"を修正
+ - spec/site.yml 内の":hosts:"のhost名を修正
 
 使い方:
 
